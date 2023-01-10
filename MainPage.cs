@@ -60,6 +60,9 @@ namespace TestingForTinex
         //element da se najde VODA
         public IWebElement vodaElement => driver.FindElement(By.XPath("//label[contains(text(),'Вода')]"));
 
+        // element da se zatvorat cookies
+        public IWebElement CookiesClose => driver.FindElement(By.Id("closeCookiesMob"));
+
         //element da se najde slajderot
         public IWebElement slajderVoda => driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_btnNextPage2"));
 
@@ -123,6 +126,11 @@ namespace TestingForTinex
         {
            
             slajderVoda.Click();
+        }
+        //funckija da se zatvori cookies
+        public void closeCookies()
+        {
+            CookiesClose.Click();
         }
     }
 

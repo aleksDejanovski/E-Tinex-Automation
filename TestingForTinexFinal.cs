@@ -174,6 +174,7 @@ namespace TestingForTinex
             page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
             MainPage page2 = new MainPage(driver);
             page2.openVater();
+            page2.closeCookies();
             wait.Until(ExpectedConditions.ElementToBeClickable(page2.slajderVoda)).Click();
             string vrednostNaValue = page2.brojNaStrana.GetAttribute("value");
             Assert.IsTrue(vrednostNaValue.Contains("2"));
