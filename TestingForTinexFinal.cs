@@ -23,8 +23,8 @@ namespace TestingForTinex
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(22);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(22);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(32);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(32);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(22));
 
 
@@ -45,7 +45,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             Assert.IsTrue(driver.FindElement(By.Id("ctl00_btnLogOut")).Text.Contains("Одјавете се"));
 
 
@@ -71,7 +71,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             Assert.IsTrue(driver.FindElement(By.XPath("//label[@for='checkbox205']")).Text.Contains("Брашно"));
@@ -84,7 +84,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             page2.openZelatinCard();
@@ -98,7 +98,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             page2.akciiZaNamaluvanjeClick();
@@ -112,7 +112,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.cestoPostavuvaniFunckija();
             Assert.IsTrue(driver.FindElement(By.CssSelector(".naslov_tekstualna.input_naslov")).Text.Contains("Често поставувани прашања"));
@@ -124,7 +124,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             page2.addtoCart1();
@@ -141,7 +141,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             List<IWebElement> siteProizvodi = driver.FindElements(By.CssSelector(".grid_category1")).ToList();
@@ -157,7 +157,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.openVater();
             Assert.IsTrue(page2.alkoholniPijaloci.Text.Contains("Алкохолни пијалоци"));
@@ -171,7 +171,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.openVater();
             page2.closeCookies();
@@ -189,7 +189,7 @@ namespace TestingForTinex
             LoginPage page = new LoginPage(driver);
             page.GoTo();
             page.login.Click();
-            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
             MainPage page2 = new MainPage(driver);
             page2.op();
             page2.closeCookies();
