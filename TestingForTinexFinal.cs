@@ -23,9 +23,9 @@ namespace TestingForTinex
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(12));
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(22);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(22);
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(22));
 
 
         }
@@ -37,7 +37,7 @@ namespace TestingForTinex
         }
 
         [Test]
-        
+
         public void testLogiranjeZaTinexPozitinoScenario()
         {
 
@@ -54,7 +54,7 @@ namespace TestingForTinex
 
         }
         [Test]
-       
+
         public void testLogiranjeZaTinexNegativnoScenario()
         {
             LoginPage page = new LoginPage(driver);
@@ -78,7 +78,7 @@ namespace TestingForTinex
 
         }
         [Test]
-        
+
         public void CheckIfUserCanSelectCard()
         {
             LoginPage page = new LoginPage(driver);
@@ -144,7 +144,7 @@ namespace TestingForTinex
             page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
             MainPage page2 = new MainPage(driver);
             page2.op();
-            List<IWebElement>siteProizvodi = driver.FindElements(By.CssSelector(".grid_category1")).ToList();
+            List<IWebElement> siteProizvodi = driver.FindElements(By.CssSelector(".grid_category1")).ToList();
             IWebElement moniniElement = siteProizvodi.FirstOrDefault(el => el.Text.Contains("MONINI"));
             moniniElement.Click();
             Assert.IsTrue(page2.naslovZaMonin.Text.Contains("MONINI"));
@@ -161,8 +161,8 @@ namespace TestingForTinex
             MainPage page2 = new MainPage(driver);
             page2.openVater();
             Assert.IsTrue(page2.alkoholniPijaloci.Text.Contains("Алкохолни пијалоци"));
-            
-            
+
+
 
         }
         [Test]
@@ -179,10 +179,30 @@ namespace TestingForTinex
             string vrednostNaValue = page2.brojNaStrana.GetAttribute("value");
             Assert.IsTrue(vrednostNaValue.Contains("2"));
 
-             
+
 
 
         }
-    }
+        [Test]
+        public void EndToEndOrderLessThen600Denars()
+        {
+            LoginPage page = new LoginPage(driver);
+            page.GoTo();
+            page.login.Click();
+            page.LoginTinex("dejanovski_a@yahoo.com", "aceecar88");
+            MainPage page2 = new MainPage(driver);
+            page2.op();
+            page2.closeCookies();
+            page2.ClickBrasno();
+            page2.closeCookies();
+            page2.ClickOdredenoBrasno();
+            page2.ClickKosnicka();
+            page2.NaplataClick();
+            page2.ProdolziClick();
+            var alert = driver.SwitchTo().Alert();
+            Assert.IsTrue(alert.Text.Contains("Мининмалната нарачка треба да е над 600 денари"));
+            
+        }
 
+    }
 }

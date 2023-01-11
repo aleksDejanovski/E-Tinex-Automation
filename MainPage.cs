@@ -69,7 +69,20 @@ namespace TestingForTinex
         //Element da se najde broj na strana 2
         public IWebElement brojNaStrana => driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_txtBrojNaStrana"));
 
-      
+        // Element za brasno
+        public IWebElement BrasnoCheckBox => driver.FindElement(By.CssSelector("label[for='checkbox205']"));
+
+        //Element klik na odredeno brasno
+        public IWebElement BrasnoOdredeno => driver.FindElement(By.CssSelector("div[data-naziv='БРАШНО пченкарно ЖИТО ЛУКС 750гр']"));
+
+        //Element za kosnicka CART
+        public IWebElement Kosnicka => driver.FindElement(By.XPath("//a[@class='koshnichka_btn']//div[@class='slika_kopc_menu']"));
+
+        //Element za naplata na pop upot
+        public IWebElement Naplata => driver.FindElement(By.Id("naplatiBtn"));
+
+        //Element prodolzi za naplata
+        public IWebElement Prodolzi => driver.FindElement(By.Id("popup-article-submit"));
 
 
 
@@ -101,11 +114,7 @@ namespace TestingForTinex
 
 
         }
-        public void addtoCart2()
-        {
-            //slagpena.FirstOrDefault(el => el.Text.Contains("МАСЛО ")).Click();
-
-        }
+        
         public void addToCartClick()
         {
             slagPenaAddToCart.Click();
@@ -131,6 +140,33 @@ namespace TestingForTinex
         public void closeCookies()
         {
             CookiesClose.Click();
+        }
+        
+        //klik na cekboks brasno
+        public void ClickBrasno()
+        {
+            BrasnoCheckBox.Click();
+        }
+
+        //klik na odredeno brasno od grupata
+        public void ClickOdredenoBrasno()
+        {
+            BrasnoOdredeno.Click();
+        }
+        public void ClickKosnicka()
+        {
+            Kosnicka.Click();
+        }
+
+        //funckija za klik na naplata
+        public void NaplataClick()
+        {
+            Naplata.Click();
+        }
+        //funkcija za prodolzi
+        public void ProdolziClick()
+        {
+            Prodolzi.Click();
         }
     }
 
