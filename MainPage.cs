@@ -84,6 +84,9 @@ namespace TestingForTinex
         //Element prodolzi za naplata
         public IWebElement Prodolzi => driver.FindElement(By.Id("popup-article-submit"));
 
+        //element Plus na narackata 
+        public IWebElement PlusZnak => driver.FindElement(By.CssSelector(".increment[data-id='602947']"));
+
 
 
         public void op()
@@ -167,6 +170,20 @@ namespace TestingForTinex
         public void ProdolziClick()
         {
             Prodolzi.Click();
+        }
+        //klikanje na plus 7 pati
+        public void PlusClick10()
+        {
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
+            PlusZnak.Click();
         }
     }
 

@@ -201,8 +201,29 @@ namespace TestingForTinex
             page2.ProdolziClick();
             var alert = driver.SwitchTo().Alert();
             Assert.IsTrue(alert.Text.Contains("Мининмалната нарачка треба да е над 600 денари"));
-            
-        }
 
+        }
+        [Test]
+        public void EndToEndOrderMoreThan600Denars()
+        {
+            LoginPage page = new LoginPage(driver);
+            page.GoTo();
+            page.login.Click();
+            page.LoginTinex("dejanovski_a@yahoo.com", "ubavovreme1");
+            MainPage page2 = new MainPage(driver);
+            page2.op();
+            page2.closeCookies();
+            page2.ClickBrasno();
+            page2.closeCookies();
+            page2.ClickOdredenoBrasno();
+            page2.ClickKosnicka();
+            page2.PlusClick10();
+            page2.NaplataClick();
+            page2.ProdolziClick();
+            var alert = driver.SwitchTo().Alert();
+            Assert.IsTrue(alert.Text.Contains("Моментално не вршиме достава во општината со која"));
+
+
+        }
     }
 }
