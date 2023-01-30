@@ -87,6 +87,12 @@ namespace TestingForTinex
         //element Plus na narackata 
         public IWebElement PlusZnak => driver.FindElement(By.CssSelector(".increment[data-id='602947']"));
 
+        //element za dodavanje u lista 
+        public List <IWebElement> siteProizvodi => driver.FindElements(By.CssSelector(".grid_category1")).ToList();
+
+        //Izbor na monin
+
+        public IWebElement moniniElement => siteProizvodi.Where(el => el.Text.Contains("MONINI")).FirstOrDefault();
 
 
         public void op()
@@ -184,6 +190,13 @@ namespace TestingForTinex
             PlusZnak.Click();
             PlusZnak.Click();
             PlusZnak.Click();
+        }
+
+        // funckija za klik slajder voda
+        public void ClickSlajder()
+        {
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(22));
+            wait.Until(ExpectedConditions.ElementToBeClickable(slajderVoda)).Click();
         }
     }
 

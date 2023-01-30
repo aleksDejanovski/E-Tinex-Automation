@@ -23,8 +23,7 @@ namespace TestingForTinex
         //koga se registrira nevaliden korisnik
         public IWebElement nevalidenLoginPoraka => driver.FindElement(By.Id("ctl00_ContentPlaceHolder1_litErr"));
 
-        
-
+      
       
 internal void GoTo()
         {
