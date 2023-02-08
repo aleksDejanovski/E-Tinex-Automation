@@ -180,16 +180,11 @@ namespace TestingForTinex
         //klikanje na plus 7 pati
         public void PlusClick10()
         {
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
-            PlusZnak.Click();
+            for (int i = 0; i<10; i++)
+            {
+                PlusZnak.Click();
+            }
+           
         }
 
         // funckija za klik slajder voda
